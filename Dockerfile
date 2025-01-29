@@ -1,5 +1,7 @@
 FROM oraclelinux:8
-RUN yum -y install /usr/bin/ps nfs-utils && yum clean all
+RUN yum -y update && \
+    yum -y install /usr/bin/ps nfs-utils && \
+    yum clean all
 
 # Copy entrypoint
 COPY run_nfs.sh /usr/local/bin/run_nfs.sh
